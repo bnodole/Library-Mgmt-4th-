@@ -1,0 +1,11 @@
+.pass{
+    display: none;
+}
+
+#loginform{
+    display: none;
+}
+
+#registerform{
+    display: visible;
+}
