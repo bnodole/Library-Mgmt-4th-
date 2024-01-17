@@ -3,9 +3,9 @@
 }
 
 #loginform{
-    display: none;
+    display: visible;
 }
 
 #registerform{
-    display: visible;
+    display: hidden;
 }
