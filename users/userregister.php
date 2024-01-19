@@ -1,8 +1,11 @@
 <?php
     require ("../connection.php");
+
+    session_start();
+
     echo "Register Here";
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $email = $_POST["email"];
+        //$email = $_POST["email"];
         $uname = $_POST['username'];
         $password = $_POST['password'];
 
@@ -13,13 +16,14 @@
         $stmt = $conn->prepare($sql);
                     
        // Bind parameters
-        $stmt->bind_param("sss", $uname,$password,$email); 
+        $stmt->bind_param("sss", $uname,$password,$_SESSION['email']); 
 
         // Execute the statement
         $stmt->execute();
 
         $stmt->close();
-        header ('Location: test.php');
+        // echo "<script>alert('Account successfully registered');</script>";
+        header ('Location: login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -32,12 +36,14 @@
 <body>
     <form action="" method="post" id="registerform">
         <h1>Register Account</h1>
+        <h4>Registering as:</h4>
+        <h4><?php echo $_SESSION['email'] ?></h4>
 
         <label for="Username">Username:</label>
         <input type="text" name="username" id="Username"><br><br>
 
-        <label for="Emailreg">Email:</label>
-        <input type="email" name="email" id="Emailreg"><br><br>
+        <!-- <label for="Emailreg">Email:</label>
+        <input type="email" name="email" id="Emailreg"><br><br> -->
 
         <label for="Passwordreg">Password:</label>
         <input type="password" name="password" id="Passwordreg"><br><br>
