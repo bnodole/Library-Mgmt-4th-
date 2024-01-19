@@ -7,7 +7,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         //$email = $_POST["email"];
         $uname = $_POST['username'];
-        $password = $_POST['password'];
+        $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
         // Use prepared statement to prevent SQL injection
         $sql = "INSERT INTO users VALUES (?, ?, ?)";

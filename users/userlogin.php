@@ -5,7 +5,7 @@
 
     $error = "";
     if  ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if ($_SESSION['Password'] == $_POST['password'])
+        if (password_verify($_POST['password'], $_SESSION['Password']))
             header ('Location: homepage.php');
         else{
             global $error;
