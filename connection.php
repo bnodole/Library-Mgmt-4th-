@@ -1,13 +1,13 @@
 <?php
     $server = "localhost";
     $username = "root";
-    $password = "";
+    $upassword = "";
     $dbname = "Library_Database";
 
     //Connect to database
-    $conn = mysqli_connect($server, $username, $password, $dbname);
+    $conn = new mysqli($server, $username, $upassword, $dbname);
 
     //Check if connected to database
-    if(!$conn){
-        die("Can't connect to database". mysqli_connect_error());
+    if($conn->connect_error){
+        die("Can't connect to database". $conn->connect_error);
     }

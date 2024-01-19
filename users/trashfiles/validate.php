@@ -22,7 +22,13 @@
                 break;
             //incase of register form
             case "Register":
-                echo "hahaha";
+                $email = $_POST['email'];
+                $uname = $_POST['username'];
+                $password = $_POST['password'];
+
+                $sql = "INSERT INTO users VALUES ('$email','$uname','$password')";
+
+                $res = mysqli_query($conn, $sql);
                 break;
             default:
                 break;
