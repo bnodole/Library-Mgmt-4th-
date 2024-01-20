@@ -25,9 +25,9 @@
 
         $row = $result->fetch_assoc();
 
-        $_SESSION['Username'] = $row['Username'];
-        $_SESSION['Password'] = $row['Password'];
         if ($row > 0) {
+            $_SESSION['Username'] = $row['Username'];
+            $_SESSION['Password'] = $row['Password'];
             header ('Location: userlogin.php');
         }else {
             echo "<script>

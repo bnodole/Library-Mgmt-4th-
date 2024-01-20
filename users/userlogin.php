@@ -6,7 +6,7 @@
     $error = "";
     if  ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($_POST['password'], $_SESSION['Password']))
-            header ('Location: homepage.php');
+            header ('Location: ./main/homepage.php');
         else{
             global $error;
             $error = "Password doesn't match";

@@ -7,6 +7,6 @@
 </head>
 <body>
     Understand less than Roting everything.
-    <span><a href="./users/homepage.php">Go to Homepage!</a></span>
+    <span><a href="./users/main/homepage.php">Go to Homepage!</a></span>
 </body>
 </html>

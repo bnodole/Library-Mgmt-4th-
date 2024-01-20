@@ -1,5 +1,5 @@
 <?php
-    require ("../connection.php");
+    require ("../../connection.php");
     session_start();
 ?>
 <!DOCTYPE html>
@@ -17,9 +17,9 @@
         <?php
             if (isset($_SESSION['Username'])){
                 echo '<a>' . $_SESSION['Username'] .'</a>';
-                echo '<a href="logout.php">' .'Logout'.'</a>';
+                echo '<a href="../logout.php">' .'Logout'.'</a>';
             }else
-                echo '<a href="login.php">'. 'Login|Register'.'</a>';
+                echo '<a href="../login.php">'. 'Login|Register'.'</a>';
         ?>
     </nav>
 </body>
