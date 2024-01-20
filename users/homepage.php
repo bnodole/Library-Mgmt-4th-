@@ -21,6 +21,6 @@
             }else
                 echo '<a href="login.php">'. 'Login|Register'.'</a>';
         ?>
-    </nav> 
+    </nav>
 </body>
 </html>
