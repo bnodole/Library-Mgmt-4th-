@@ -8,7 +8,7 @@
 <body>
     <nav>
         <ul>
-            <a href="booklists.php"><li>Book List</li></a>
+            <a href="booklist.php"><li>Book List</li></a>
             <li>Issued List</li>
             <li>Requests</li>
             <li>Login</li>
