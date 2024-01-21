@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Lists</title>
-    <link rel="stylesheet" href="../../admin/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Syllabus</h1>
     <label for="semester">Select Semester:</label>
-    <select name="sems" id="semester" onclick="books()">
+    <select name="sems" id="semester" onchange="books()">
         <option selected disabled>Choose Semester:</option>
         <option value="First">I</option>
         <option value="Second">II</option>
@@ -258,6 +258,6 @@
             <td>CACS456</td> <td>Machine Learning</td> <td>CACS460</td> <td>Internet of Things</td>
         </tr>
     </table>
-    <script src="../../admin/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
