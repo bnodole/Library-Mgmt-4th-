@@ -10,7 +10,7 @@ function books() {
         for (var j = 0; j < elements.length; j++) {
             if (sem === semester[i]) {
                 // Show the selected semester table
-                elements[j].style.display = "table";  // You can use "table" if that's the original display value
+                elements[j].style.display = "block";  // You can use "table" if that's the original display value
             } else {
                 // Hide other tables
                 elements[j].style.display = "none";

@@ -1,7 +1,7 @@
 <?php
     $server = "localhost";
     $username = "root";
-    $upassword = "";
+    $upassword = "Babe";
     $dbname = "Library_Database";
 
     //Connect to database
