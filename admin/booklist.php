@@ -21,7 +21,7 @@
         <option value="Eight">VIII</option>
     </select>
     <br>
-    <table id="First">
+    <table class="First">
         <caption>Semester I</caption>
         <tr>
             <th>Course Code</th> <th>Course Title</th> <th>Credit Hrs.</th> <th>Lecture Hrs.</th> <th>Tutorial Hrs.</th> <th>Lab Hrs.</th>
@@ -46,7 +46,7 @@
         </tr>
     </table>
 
-    <table id="Second">
+    <table class="Second">
         <caption>Semester II</caption>
         <tr>
             <th>Course Code</th> <th>Course Title</th> <th>Credit Hrs.</th> <th>Lecture Hrs.</th> <th>Tutorial Hrs.</th> <th>Lab Hrs.</th>
@@ -71,7 +71,7 @@
         </tr>
     </table>
 
-    <table id="Third">
+    <table class="Third">
         <caption>Semester III</caption>
         <tr>
             <th>Course Code</th> <th>Course Title</th> <th>Credit Hrs.</th> <th>Lecture Hrs.</th> <th>Tutorial Hrs.</th> <th>Lab Hrs.</th>
@@ -96,7 +96,7 @@
         </tr>
     </table>
 
-    <table id="Fourth">
+    <table class="Fourth">
         <caption>Semester IV</caption>
         <tr>
             <th>Course Code</th> <th>Course Title</th> <th>Credit Hrs.</th> <th>Lecture Hrs.</th> <th>Tutorial Hrs.</th> <th>Lab Hrs.</th>
@@ -124,7 +124,7 @@
         </tr>
     </table>
     
-    <table id="Fifth">
+    <table class="Fifth">
         <caption>Semester V</caption>
         <tr>
             <th>Course Code</th> <th>Course Title</th> <th>Credit Hrs.</th> <th>Lecture Hrs.</th> <th>Tutorial Hrs.</th> <th>Lab Hrs.</th>
@@ -149,7 +149,7 @@
         </tr>
     </table>
 
-    <table id="Sixth">
+    <table class="Sixth">
         <caption>Semester VI</caption>
         <tr>
             <th>Course Code</th> <th>Course Title</th> <th>Credit Hrs.</th> <th>Lecture Hrs.</th> <th>Tutorial Hrs.</th> <th>Lab Hrs.</th>
