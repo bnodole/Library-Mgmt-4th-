@@ -30,7 +30,7 @@
         <label for="sub">Subject:</label>
         <input type="text" name="subject" id="sub" value="<?php echo $_SESSION['sub'];?>" readonly>
         <label for="bookname">Bookname:</label>
-        <input type="text" name="bookname" id="bookname">
+        <input type="text" name="bookname" id="bookname" required>
         <button type="submit" name="adb">Add Book</button>
     </form>
 </body>
