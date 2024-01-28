@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+?>
+<DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,49 +11,30 @@
 </head>
 <body>
     <h1>Syllabus</h1>
-    <label for="semester">Select Semester:</label>
-    <select name="sems" id="semester" onchange="books()">
-        <option selected disabled>Choose Semester:</option>
-        <option value="First">I</option>
-        <option value="Second">II</option>
-        <option value="Third">III</option>
-        <option value="Fourth">IV</option>
-        <option value="Fifth">V</option>
-        <option value="Sixth">VI</option>
-        <option value="Seventh">VII</option>
-        <option value="Eight">VIII</option>
-    </select>
+    <form method="POST" action="addform.php" name="list">
+        <label for="semester">Select Semester:</label>
+        <select name="sems" id="semester" onchange="books()">
+            <option selected disabled>Choose Semester:</option>
+            <option value="First">I</option>
+            <option value="Second">II</option>
+            <option value="Third">III</option>
+            <option value="Fourth">IV</option>
+            <option value="Fifth">V</option>
+            <option value="Sixth">VI</option>
+            <option value="Seventh">VII</option>
+            <option value="Eight">VIII</option>
+        </select>
+    
     <br>
     <div class="First">
-        <div>Computer Fundamentals <button type="submit">Add Book</button><button type="button">Delete Books</button></div>
-        <div>Society and Technology</div>
-        <div>English I</div>
-        <div>Mathematics I</div>
-        <div>Digital Logic</div>
+        <label for="101">Computer Fundamentals</label>
+        <button type="submit" name='adbook' value="Computer Fundamentals" id="101">Add book</button>
+        <button type="submit" name='delbook' value="Computer Fundamentals" id="101">Delete book</button>
+        <div name="sub">Society and Technology <button type="submit">Add Book</button><button type="button">Delete Books</button></div>
+        <div>English I <button type="submit">Add Book</button><button type="button">Delete Books</button></div>
+        <div>Mathematics I <button type="submit">Add Book</button><button type="button">Delete Books</button></div>
+        <div>Digital Logic <button type="submit">Add Book</button><button type="button">Delete Books</button></div>
     </div>
-
-    <!-- <table class="First">
-        <caption>Semester I</caption>
-        <tr>
-            <th>Course Code</th> <th>Course Title</th>
-        </tr>
-        <tr>
-            <td>CACS101</td> <td>Computer Fundamentals and Applications</td>
-        </tr>
-        <tr>
-            <td>CASO102</td> <td>Society and Technology</td>
-        </tr>
-        <tr>
-            <td>CAEN103</td> <td>English I</td>
-        </tr>
-        <tr>
-            <td>CAMT104</td> <td>Mathematics I</td>
-        </tr>
-        <tr>
-            <td>CACS105</td> <td>Digital Logic</td>
-        </tr>
-    </table> -->
-
     <table class="Second">
         <caption>Semester II</caption>
         <tr>
@@ -236,6 +220,7 @@
             <td>CACS456</td> <td>Machine Learning</td> <td>CACS460</td> <td>Internet of Things</td>
         </tr>
     </table>
+    </form>
     <script src="script.js"></script>
 </body>
 </html>

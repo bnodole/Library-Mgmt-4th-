@@ -7,3 +7,9 @@ CREATE TABLE users (
     Password VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL
 );
+
+create table booklist(
+	Semester varchar(25) not null,
+    Subject varchar(255) not null,
+    Books varchar(255)
+);
