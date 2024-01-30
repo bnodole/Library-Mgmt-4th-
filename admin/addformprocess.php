@@ -36,7 +36,7 @@
                 if ($ins) {
                     // Commit the transaction if insertion is successful
                     mysqli_commit($conn);
-                    header("Location: addform.php");
+                    header("Location: booklist.php");
                 }else{
                     echo "is error: ";
                 }
@@ -58,7 +58,7 @@
             $dels = mysqli_query($conn, $delete);
             if ($dels) {
                 mysqli_commit($conn);
-                header ("Location: addform.php");
+                header ("Location: booklist.php");
             }
         }catch(Exception $err) {
             echo $err;

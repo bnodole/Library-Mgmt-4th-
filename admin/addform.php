@@ -1,7 +1,7 @@
 <?php
     session_start();
     require ("../connection.php");
-    $showad=$showdel=null;
+    $showad=$showdel=$sub=$semester=null;
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Check if 'semester' and 'Add Book' are set
         if (isset($_POST['sems']) && isset($_POST['adbook'])) {
@@ -19,6 +19,8 @@
     
     $_SESSION['sub']=$sub;  //set subject name to session variable
     $_SESSION['semester']=$semester;    //set semester name to session variable
+    $_SESSION['showad']=$showad; //set showad to session variable
+    $_SESSION['showdel']=$showdel; //set showdel to session variable
 
     function list_books($conn,$selsem,$selsub){
         $listsql = 'SELECT * FROM booklist WHERE Semester = ? AND Subject = ? ';
@@ -46,7 +48,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php if($showad === 1){   ?>
+    <?php if($_SESSION['showad'] === 1){   ?>
     <form method="POST" action="addformprocess.php" id="addform">
         <h1>Add Books</h1>
         <label for="semester">Semester:</label>
@@ -61,7 +63,7 @@
 
 
 
-    <?php if($showdel === 1){   ?>
+    <?php if($_SESSION['showdel'] === 1){   ?>
     <form method="POST" action="addformprocess.php" id="delform">
         <h1>Remove Books</h1>   
         <label for="semester">Semester:</label> <?php echo $_SESSION['semester'];?> <br>
