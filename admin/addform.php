@@ -49,7 +49,7 @@
 </head>
 <body>
     <?php if($_SESSION['showad'] === 1){   ?>
-    <form method="POST" action="addformprocess.php" id="addform">
+    <form method="POST" action="addformprocess.php" id="addform" onsubmit="return addbook();">
         <h1>Add Books</h1>
         <label for="semester">Semester:</label>
         <input type="text" name="semester" id="semester" value="<?php echo $_SESSION['semester'];?>" readonly>
@@ -64,7 +64,7 @@
 
 
     <?php if($_SESSION['showdel'] === 1){   ?>
-    <form method="POST" action="addformprocess.php" id="delform">
+    <form method="POST" action="addformprocess.php" id="delform" onsubmit="return delbook();">
         <h1>Remove Books</h1>   
         <label for="semester">Semester:</label> <?php echo $_SESSION['semester'];?> <br>
         <label for="sub">Subject:</label> <?php echo $_SESSION['sub'];?>
@@ -77,4 +77,5 @@
     </form>
     <?php } ?>
 </body>
+<script src="script.js"></script>
 </html>

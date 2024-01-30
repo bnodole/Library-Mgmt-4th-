@@ -19,6 +19,20 @@ function books() {
     }
 }
 
+function addbook(){
+    if (confirm('Add Books?')){
+        window.location.href('addformprocess.php');
+    }
+    return false;
+}
+
+function delbook(){
+    if (confirm('Are you sure you want to remove them?')){
+        window.location.href('addformprocess.php');
+    }
+    return false;
+}
+
 // Call the books function when the page loads
 document.addEventListener('DOMContentLoaded', function () {
     books();
