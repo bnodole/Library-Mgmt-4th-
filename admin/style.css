@@ -1,3 +1,4 @@
+/* CSS for 'booklist.php' */
 table,th,td {
     border: 1px solid;
     border-collapse: collapse;
@@ -5,4 +6,9 @@ table,th,td {
 
 #First, #Second, #Third, #Fourth, #Fifth, #Sixth, .Seventh, .Eight{
     display: none;
+}
+
+/* CSS for 'addform.php' */
+#addform, #delform{
+    display: block;
 }
