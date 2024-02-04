@@ -17,6 +17,8 @@
             foreach($_POST['delbl'] as $selected) {
                 delete_book($conn,$selected);
             }
+        }else{
+            echo '<script>alert("Please select atleast one book to remove");</script>';
         }
     }
 
