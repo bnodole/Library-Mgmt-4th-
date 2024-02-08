@@ -1,6 +1,7 @@
 <?php
     session_start();
     require ("../connection.php");
+    require ("../functions.php");
     $showad=$showdel=$sub=$semester=null;
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Check if 'semester' and 'Add Book' are set
@@ -22,19 +23,6 @@
     $_SESSION['showad']=$showad; //set showad to session variable
     $_SESSION['showdel']=$showdel; //set showdel to session variable
 
-    function list_books($conn,$selsem,$selsub){
-        $listsql = 'SELECT * FROM booklist WHERE Semester = ? AND Subject = ? ';
-        $stm = $conn -> prepare($listsql);
-        $stm ->bind_param("ss",$selsem,$selsub);
-        $stm -> execute();
-
-        $lists = $stm->get_result();
-        
-        while ($bookss = $lists->fetch_object()){
-            echo ' <input type="checkbox" class="boooks" name="delbl[]" value="'.$bookss->Books.'"> '. $bookss->Books;
-            echo "<br>";
-        }
-    }
 ?>
 
 <!DOCTYPE html>

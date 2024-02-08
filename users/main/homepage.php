@@ -14,7 +14,7 @@
         <a href="homepage.php">Dashboard</a>
         <a href="booklist.php">Books/Syllabus</a>
         <a href="#">Your Books</a>
-        <a href="#">Request!</a>
+        <a href="request_book.php">Request!</a>
         <?php
             if (isset($_SESSION['Username'])){
                 echo '<a>' . $_SESSION['Username'] .'</a>';
