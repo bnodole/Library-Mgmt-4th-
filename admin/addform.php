@@ -30,11 +30,9 @@
 
         $lists = $stm->get_result();
         
-        $i=0;
         while ($bookss = $lists->fetch_object()){
-            echo ' <input type="checkbox" name="delbl[]" value="'.$bookss->Books.'"> '. $bookss->Books;
+            echo ' <input type="checkbox" class="boooks" name="delbl[]" value="'.$bookss->Books.'"> '. $bookss->Books;
             echo "<br>";
-            $i++;
         }
     }
 ?>
@@ -46,6 +44,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Books</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <?php if($_SESSION['showad'] === 1){   ?>
@@ -64,7 +63,7 @@
 
 
     <?php if($_SESSION['showdel'] === 1){   ?>
-    <form method="POST" action="addformprocess.php" id="delform" onsubmit="return delbook();">
+    <form method="POST" id="delform" action="addformprocess.php">
         <h1>Remove Books</h1>   
         <label for="semester">Semester:</label> <?php echo $_SESSION['semester'];?> <br>
         <label for="sub">Subject:</label> <?php echo $_SESSION['sub'];?>
@@ -73,9 +72,20 @@
         <?php 
             list_books($conn,$_SESSION['semester'],$_SESSION['sub']);          
         ?>
-        <button type="submit" name="dlb">Remove Book</button>
+        <button type="submit" name="dlb" id="remove_books">Remove Book</button>
     </form>
     <?php } ?>
 </body>
-<script src="script.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#remove_books').click(function(){
+            if($('.boooks:checked').length > 0){ // Check if any checkboxes are checked
+                return true; // Allow form submission
+            } else {
+                alert('No books selected');
+                return false; // Prevent form submission
+            }
+        });
+    });
+</script>
 </html>
