@@ -52,7 +52,6 @@
         $lists = $stm->get_result();
         
         while ($bookss = $lists->fetch_object()){
-            echo ' <input type="checkbox" class="boooks" name="delbl[]" value="'.$bookss->Books.'"> '. $bookss->Books;
-            echo "<br>";
+            echo "<input type='checkbox' class='boooks' name='delbl[]' value='".$bookss->Books."'> ". $bookss->Books ."<br>";
         }
     }

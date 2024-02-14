@@ -11,7 +11,7 @@
     <form method="POST" action="addform.php" name="list">
         <label for="semester">Select Semester:</label>
         <select name="sems" id="semester" onchange="books()">
-            <option selected disabled>Choose Semester:</option>
+            <option selected disabled hidden>Choose Semester:</option>
             <option value="First">I</option>
             <option value="Second">II</option>
             <option value="Third">III</option>
