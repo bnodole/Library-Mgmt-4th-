@@ -1,15 +1,22 @@
 <?php
     session_start();
-    if($_SERVER['REQUEST_METHOD']=='POST'){
-        if(isset($_POST['req_sem'])){
-            $req_sem=$_POST['req_sem'];
+
+    $requested_books = []; // Initialize as empty array
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['req_book'])) {
+            $i = 0;
+            foreach ($_POST['delbl'] as $selected) {
+                if ($i < 5) {
+                    $requested_books[$i] = $selected;
+                    $i++;
+                }
+            }
+
+            // Output requested books
+            foreach ($requested_books as $book) {
+                echo $book . "<br>";
+            }
         }
-        if (isset($_POST['req_subject'])){
-            $req_sub=$_POST['req_subject'];
-        }
-        $_SESSION['req_sem']=$req_sem;
-        $_SESSION['req_sub']=$req_sub;
-        // if (isset($_SESSION['req_sub']) && isset($_SESSION['req_sem'])){
-        //     list_books($conn, $_SESSION['req_sem'],$_SESSION['req_sub']
-        // }
     }
+    

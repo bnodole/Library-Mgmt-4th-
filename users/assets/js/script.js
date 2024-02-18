@@ -25,3 +25,30 @@ function select_subjects() {
         });
     }
 }
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Listen for change event on checkboxes
+//     document.querySelectorAll('.boooks').forEach(function(checkbox) {
+//         checkbox.addEventListener('change', function() {
+//             // Check if checkbox is checked
+//             if (this.checked) {
+//                 // Get the value of the checked checkbox
+//                 let bookName = this.value;
+                
+//                 // Create a new row and cell in the table body
+//                 let tableBody = document.getElementById('bookTableBody');
+//                 let newRow = tableBody.insertRow();
+//                 let newCell = newRow.insertCell();
+                
+//                 // Set the text content of the cell to the checked book name
+//                 newCell.textContent = bookName;
+//             } else {
+//                 // If checkbox is unchecked, remove the corresponding row from the table
+//                 let row = this.parentNode.parentNode;
+//                 row.parentNode.removeChild(row);
+//             }
+//         });
+//     });
+// });
+
+

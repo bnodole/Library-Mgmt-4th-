@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <form method="post" action="req_book.php">
+    <form method="post" action="req_book.php" id="bookform">
         <label for="semester">Semester:</label>
         <select name="semester" id="semester" onchange="select_subjects();">
             <option selected disabled hidden>Select Semester:</option>
@@ -34,27 +34,57 @@
         <p id="bookname">asdds</p>
         <button type="submit" name="req_book" id="req_books">Request Book</button>
     </form>
+    <table id="bookTable">
+    <thead>
+        <tr>
+            <th>Selected Books</th>
+        </tr>
+    </thead>
+    <tbody id="bookTableBody"></tbody>
+</table>
 </body>
 <script>
     $(document).ready(function() {
-        $('#semester').change(function() {
-        $('#subject').change(function(){
-            sem=$("#semester").val();
-            sub=$("#subject").val();
+        function updateTable() {
+            let checkedValues = [];
+            $('.boooks:checked').each(function() {
+                let value = $(this).val();
+                checkedValues.push(value);
+            });
+
+            // Send AJAX request to update table with checked values
+            $.ajax({
+                type: "POST",
+                url: "show_books.php",
+                data: { checkedValues: checkedValues },
+                success: function(response) {
+                    $('#bookTableBody').html(response);
+                }
+            });
+        }
+
+        $('#semester, #subject').change(function() {
+            let sem = $("#semester").val();
+            let sub = $("#subject").val();
 
             $.ajax({
                 type: "POST",
-                url: "test.php",
+                url: "show_books.php",
                 data: {
                     sub: sub,
                     sem: sem
                 },
                 success: function(response) {
                     $('#bookname').html(response);
-                    console.log(response);
                 }
             });
         });
+
+        //Listen for change event on checkboxes
+        $('#bookname').click(function(){
+            $('.boooks').change(function() {
+                updateTable();
+            });
         });
     });
 </script>
