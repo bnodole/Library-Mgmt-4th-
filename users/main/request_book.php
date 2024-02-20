@@ -42,15 +42,26 @@
     </thead>
     <tbody id="bookTableBody"></tbody>
 </table>
+<p id="limit_msg"></p>
 </body>
 <script>
     $(document).ready(function() {
+        let checkedValues = [];
         function updateTable() {
-            let checkedValues = [];
-            $('.boooks:checked').each(function() {
-                let value = $(this).val();
-                checkedValues.push(value);
+            $('.boooks').each(function() {
+                if ($(this).is(":checked")) {
+                    let value = $(this).val();
+                    if (checkedValues.length < 5 && checkedValues.indexOf(value) === -1) {
+                        checkedValues.push(value);
+                    }
+                }
             });
+
+            if (checkedValues.length === 5) {
+                $('#limit_msg').text('Limit reached! Only 5 books!!');
+            } else {
+                $('#limit_msg').text('');
+            }
 
             // Send AJAX request to update table with checked values
             $.ajax({
